@@ -1,0 +1,19 @@
+<div class="text-center" style="margin-top: 50px">
+    <h1>Ponyracer <small>Always a pleasure to bet on ponies</small></h1>
+    </div>
+    <div class="text-center">
+    <!-- insert the link with the routerLink here -->
+    <!-- <a href="" [routerLink]="['/races', race.id, 'ponies', pony.id]">See pony</a> -->
+    <p>
+    <a class="btn btn-large btn-primary" href="" routerLink="/races" routerLinkActive #route="routerLinkActive"><strong>Courses</strong>{{
+        route.isActive ? '' : '' }}</a>
+    &nbsp;
+    <a class="btn btn-large btn-primary" href="" routerLink="/paris" routerLinkActive #route="routerLinkActive" *ngIf="isConnected()" ><strong>Paris</strong>{{
+        route.isActive ? '' : '' }}</a>
+    &nbsp;    
+    <a class="btn btn-large btn-primary" href="" routerLink="/login" routerLinkActive #route="routerLinkActive" *ngIf="!isConnected()" ><strong>Login</strong>{{
+        route.isActive ? '' : '' }}</a>
+    &nbsp;
+    <a class="btn btn-large btn-primary" href="" routerLink="/register" routerLinkActive #route="routerLinkActive" *ngIf="!isConnected()" ><strong>Inscription</strong>{{
+        route.isActive ? '' : '' }}</a>   
+</p>

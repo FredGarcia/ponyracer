@@ -1,0 +1,78 @@
+{
+    "races": [
+      {
+        "id": 12,
+        "name": "Lyon",
+        "ponies": [
+          {
+            "id": 1,
+            "name": "Gentle Pie",
+            "color": "YELLOW"
+          },
+          {
+            "id": 2,
+            "name": "Big Soda",
+            "color": "ORANGE"
+          },
+          {
+            "id": 3,
+            "name": "Gentle Bottle",
+            "color": "PURPLE"
+          },
+          {
+            "id": 4,
+            "name": "Superb Whiskey",
+            "color": "GREEN"
+          },
+          {
+            "id": 5,
+            "name": "Fast Rainbow",
+            "color": "BLUE"
+          }
+        ],
+        "startInstant": "2021-07-06T15:05:00Z"
+      },
+      {
+        "id": 13,
+        "name": "Tokyo",
+        "ponies": [
+          {
+            "id": 6,
+            "name": "Fast Rainbow",
+            "color": "BLUE"
+          },
+          {
+            "id": 7,
+            "name": "Gentle Castle",
+            "color": "GREEN"
+          },
+          {
+            "id": 8,
+            "name": "Awesome Rock",
+            "color": "PURPLE"
+          },
+          {
+            "id": 9,
+            "name": "Little Rainbow",
+            "color": "YELLOW"
+          },
+          {
+            "id": 10,
+            "name": "Great Soda",
+            "color": "ORANGE"
+          }
+        ],
+        "startInstant": "2021-07-06T15:03:00Z"
+      }
+    ],
+    "comments": [
+      {
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+      }
+    ],
+    "profile": {
+      "name": "typicode"
+    }
+  }

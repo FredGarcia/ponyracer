@@ -1,0 +1,10 @@
+<div><!-- | translate -->
+    <h2>{{ onerace.name }} </h2>
+<!--  {{ onerace | json }} -->
+    <h3>{{ onerace.startInstant | fromNow  }} </h3>
+    <div class="row">
+      <div *ngFor="let pony of onerace.ponies" class="col-sm-2">
+        <pr-pony [pony]="pony"></pr-pony>
+      </div>
+    </div>
+  </div>

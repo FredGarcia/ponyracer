@@ -1,0 +1,25 @@
+
+<!-- <div *ngIf="races.length > 0">
+    <h2>Races</h2>
+    <ul>
+        <li *ngFor="let race of races | slice:0:4 ; first as prems ; index as i">
+            <span [ng-class]= "i%2==1 ? 'firstClass' : ''" >
+                {{ i+1 }} {{ race.name | uppercase }}
+              </span>
+        </li>
+    </ul>
+-->
+<p>
+    <a class="btn btn-large btn-primary" href="" routerLink="/" routerLinkActive #route="routerLinkActive"><strong>Accueil</strong>{{ route.isActive ? '' : '' }}</a>
+    &nbsp;    
+    <a class="btn btn-large btn-primary" *ngIf="isConnected()" href="" routerLink="/paris" routerLinkActive #route="routerLinkActive"><strong>Paris</strong>{{ route.isActive ? '' : '' }}</a>
+    &nbsp;    
+    <a class="btn btn-large btn-primary"  *ngIf="!isConnected()" href="" routerLink="/register" routerLinkActive #route="routerLinkActive"><strong>Registre</strong>{{ route.isActive ? '' : '' }}</a>   
+    &nbsp;
+    <a class="btn btn-large btn-primary"  *ngIf="!isConnected()" href="" routerLink="/login" routerLinkActive #route="routerLinkActive"><strong>Login</strong>{{ route.isActive ? '' : '' }}</a>
+</p>
+<ul>
+    <li *ngFor="let onerace of races">
+        <pr-race [course] = "onerace"></pr-race>
+    </li>
+</ul><nav></nav>

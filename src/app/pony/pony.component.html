@@ -1,0 +1,5 @@
+<strong>{{ pony.id }}</strong>
+<figure (click)="clicked()">
+    <img  [src]="getPonyImageUrl()" [alt]="pony.name" />
+    <figcaption>{{ pony.name }}</figcaption>
+</figure>

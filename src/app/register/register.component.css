@@ -1,0 +1,11 @@
+.ng-invalid {
+    border:2px solid red
+}
+
+.ng-valid {
+    border:2px solid green
+}
+
+.ng-pristine {
+    border:2px solid red
+}

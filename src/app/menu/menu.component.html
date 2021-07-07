@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand">PonyRacer</a>
+    <button (click)="toggleNavbar($event)" type="button" class="navbar-toggler">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbar" class="navbar-collapse" [class.collapse]="navbarCollapsed">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                // COMMENT CONNAITRE LA PAGE PRSENTE ???
+            <a class="btn btn-large nav-link" href="" routerLink="/" routerLinkActive #route="routerLinkActive"><strong>Accueil</strong>{{ route.isActive ? '' : '' }}</a>
+            </li>
+            <li class="nav-item">
+            <a class="btn btn-large nav-link" href="" routerLink="/races" routerLinkActive #route="routerLinkActive"><strong>Courses</strong>{{ route.isActive ? '' : '' }}</a>
+            </li>
+            <li class="nav-item" *ngIf="isConnected()">
+            <a class="btn btn-large nav-link" href="" routerLink="/paris" routerLinkActive #route="routerLinkActive"><strong>Paris</strong>{{ route.isActive ? '' : '' }}</a>
+            </li>
+        <!--  {{ user | json }} -->
+            <li class="nav-item" *ngIf="!isConnected()">
+            <a class="btn btn-large nav-link" href="" routerLink="/register" routerLinkActive #route="routerLinkActive"><strong>Registre</strong>{{ route.isActive ? '' : '' }}</a>
+            </li>   
+            <li class="nav-item" *ngIf="!isConnected()">
+            <a class="btn btn-large nav-link" href="" routerLink="/login" routerLinkActive #route="routerLinkActive"><strong>Login</strong>{{ route.isActive ? '' : '' }}</a>
+            </li>           
+            <li (click)="logout($event)" class="nav-item fa fa-power-off" role="button" *ngIf="isConnected()" onClick="logout()">
+            <!--<span class="fa fa-power-off">-->
+                <strong>Logout</strong>
+           <!-- </span>-->
+            </li>   
+            <li class="nav navbar-nav" *ngIf="isConnected()">
+                    <span class="nav-item navbar-text mr-2">
+                        {{ user.login }}
+                        <span class="fa fa-star">
+                            {{ user.money }}
+                        </span>
+                    </span>
+            </li>             
+        </ul>
+    </div>
+</nav>
+<!-- <a href="#" (click)="toggleNavBar($event)">CLICK</a> -->
