@@ -1,35 +1,33 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { By } from '@angular/platform-browser';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule, HttpClientTestingModule, NgbCollapseModule],
+      declarations: [AppComponent, MenuComponent]
+    })
+  );
 
-  it('should create the app', () => {
+  it('should have a router outlet', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    const element = fixture.nativeElement;
+    const routerOutlet = element.querySelector('router-outlet');
+    expect(routerOutlet).withContext('You need a RouterOutlet component in your root component').not.toBeNull();
   });
 
-  it(`should have as title 'ponyracer'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ponyracer');
-  });
-
-  it('should render title', () => {
+  it('should use the menu component', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ponyracer app is running!');
+    const element = fixture.debugElement;
+    expect(element.query(By.directive(MenuComponent)))
+      .withContext('You probably forgot to add MenuComponent to the AppComponent template')
+      .not.toBeNull();
   });
 });
