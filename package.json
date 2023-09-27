@@ -21,7 +21,7 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "boostrap": "^2.0.0",
     "bootstrap": "^5.0.2",
-    "date-fns": "^2.22.1",
+    "date-fns": "^2.30.0",
     "json-server": "^0.16.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
